@@ -1,0 +1,304 @@
+:root {
+    --bg-color: #0b0f19;          
+    --card-bg: #131a2a;         
+    --cyan-neon: #00f3ff;       
+    --red-neon: #ff0055;        
+    --gold-neon: #ffd700;       
+    --purple-neon: #a855f7;     
+    --text-color: #e2e8f0;      
+    --font-title: 'Orbitron', sans-serif;
+    --font-body: 'Roboto', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: Arial, sans-serif;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+    padding-top: 150px; 
+}
+
+h1, h2, h3, h4 {
+    letter-spacing: 1px;
+}
+
+h2 {
+    color: var(--cyan-neon);
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    text-shadow: 0 0 10px rgba(0, 243, 255, 0.3);
+}
+
+.header-principal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--bg-color);
+    z-index: 1000;
+    text-align: center;
+    padding: 15px 0;
+    border-bottom: 2px solid var(--cyan-neon);
+    box-shadow: 0 4px 15px rgba(0, 243, 255, 0.2);
+}
+
+h1 {
+    color: var(--cyan-neon);
+    font-size: 2.5rem;
+    text-shadow: 0 0 10px var(--cyan-neon);
+    margin-bottom: 10px;
+}
+
+.barra-navegacion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.barra-navegacion .menu {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.barra-navegacion a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 0.9rem;
+    padding: 8px 16px;
+    border: 1px solid var(--cyan-neon);
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.barra-navegacion a:hover,
+.barra-navegacion a[aria-current="page"] {
+    background-color: var(--cyan-neon);
+    color: var(--bg-color);
+    box-shadow: 0 0 10px var(--cyan-neon);
+    font-weight: bold;
+}
+
+.contenedor-tarjetas-seccion {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.tarjeta-seccion {
+    background-color: var(--card-bg);
+    border: 1px solid rgba(0, 243, 255, 0.3);
+    border-radius: 8px;
+    overflow: hidden;
+    padding: 25px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tarjeta-seccion:hover {
+    border-color: var(--cyan-neon);
+    box-shadow: 0 0 15px rgba(0, 243, 255, 0.3);
+}
+
+.tarjeta-contenido {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.tarjeta-contenido img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 6px;
+    border: 2px solid var(--cyan-neon);
+    box-shadow: 0 0 10px rgba(0, 243, 255, 0.2);
+    object-fit: cover;
+}
+
+.texto-seccion h3 {
+    color: var(--cyan-neon);
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.texto-seccion p {
+    line-height: 1.7;
+    color: var(--text-color);
+}
+
+.tarjeta-seccion:nth-child(odd) .tarjeta-contenido {
+    flex-direction: row;
+}
+
+.tarjeta-seccion:nth-child(even) .tarjeta-contenido {
+    flex-direction: row-reverse;
+}
+
+/* Estilo para el Título de Fin grande y llamativo */
+.contenedor-titulo-fin {
+    text-align: center;
+    margin: 50px 0 20px 0;
+}
+
+.titulo-fin {
+    font-family: var(--font-title);
+    font-size: 3.5rem;
+    color: var(--gold-neon);
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    text-shadow: 0 0 15px var(--gold-neon), 0 0 30px rgba(255, 215, 0, 0.5);
+    animation: brillo-fin 2s infinite alternate;
+}
+
+@keyframes brillo-fin {
+    0% {
+        text-shadow: 0 0 10px var(--gold-neon), 0 0 20px rgba(255, 215, 0, 0.3);
+    }
+    100% {
+        text-shadow: 0 0 20px var(--gold-neon), 0 0 40px var(--gold-neon);
+    }
+}
+
+.contenedor-botones {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px auto 20px auto;
+    gap: 20px;
+}
+
+.btn-navegacion {
+    display: inline-block;
+    background-color: var(--card-bg);
+    color: var(--cyan-neon);
+    text-decoration: none;
+    padding: 12px 25px;
+    border: 2px solid var(--cyan-neon);
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 243, 255, 0.2);
+}
+
+.btn-navegacion:hover {
+    background-color: var(--cyan-neon);
+    color: var(--bg-color);
+    box-shadow: 0 0 20px var(--cyan-neon);
+    transform: translateY(-2px);
+}
+
+.footer-principal {
+    background-color: var(--card-bg);
+    border-top: 2px solid var(--cyan-neon);
+    margin-top: 60px;
+    padding: 40px 20px 20px 20px;
+    box-shadow: 0 -4px 15px rgba(0, 243, 255, 0.1);
+}
+
+.footer-contenido {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto 30px auto;
+}
+
+.footer-info h3 {
+    color: var(--cyan-neon);
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.footer-info p {
+    color: var(--text-color);
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.footer-enlaces h4 {
+    color: var(--gold-neon);
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.footer-enlaces ul {
+    list-style: none;
+}
+
+.footer-enlaces ul li {
+    margin-bottom: 8px;
+}
+
+.footer-enlaces ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.footer-enlaces ul li a:hover {
+    color: var(--cyan-neon);
+    text-shadow: 0 0 5px var(--cyan-neon);
+}
+
+.footer-derechos {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.85rem;
+    color: var(--text-color);
+    opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding-top: 190px;
+    }
+
+    .tarjeta-seccion:nth-child(odd) .tarjeta-contenido,
+    .tarjeta-seccion:nth-child(even) .tarjeta-contenido {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .tarjeta-contenido img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .contenedor-botones {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .btn-navegacion {
+        width: 100%;
+        text-align: center;
+    }
+
+    .footer-contenido {
+        flex-direction: column;
+        text-align: center;
+    }
+}
