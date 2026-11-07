@@ -19,4 +19,4 @@
 - **Git & GitHub** para el control de versiones y trabajo en equipo.
 
 ---
-&copy; 2026 - Derechos reservados de Jose Andrés BRenes
+&copy; 2026 - Derechos reservados de Jose Andrés Brenes
